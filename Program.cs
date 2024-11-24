@@ -10,31 +10,14 @@ internal class Program
         Console.WriteLine("Введіть число");
         string userInput = Console.ReadLine();
 
+        // double parse
         try
         {
             double parseDouble = double.Parse(userInput);
             Console.WriteLine($"Успішно перетворено в double {parseDouble}");
 
-            float parseFloat  = float.Parse(userInput);
-            Console.WriteLine($"Успішно перетворено в float {parseFloat}");
-
-            decimal parseDecimal = decimal.Parse(userInput);
-            Console.WriteLine($"Успішно перетворено в decimal {parseDecimal}");
-
-            int parseInt = int.Parse(userInput);
-            Console.WriteLine($"Успішно перетворено в інт {parseInt}");
-
-            byte parseByte = byte.Parse(userInput);
-            Console.WriteLine($"Успішно перетворено в інт {parseByte}");
-
-            short parseShort = short.Parse(userInput);
-            Console.WriteLine($"Успішно перетворено в інт {parseShort}");
-
-            long parseLong = long.Parse(userInput);
-            Console.WriteLine($"Успішно перетворено в long {parseLong}");
-
-            char parseChar = char.Parse(userInput);
-            Console.WriteLine($"Успішно перетворено в char {parseChar}");     
+            //char parseChar = char.Parse(userInput);
+            //Console.WriteLine($"Успішно перетворено в char {parseChar}");     
            
 
         }
@@ -47,10 +30,133 @@ internal class Program
         {
             Console.WriteLine($"OverflowException - {ex}");
         }
-        catch (Exception ex)
+
+        // float parse
+        try
         {
-            Console.WriteLine($"Щось пішло не так {ex}");
+            float parseFloat  = float.Parse(userInput);
+            Console.WriteLine($"Успішно перетворено в float {parseFloat}");
+
         }
+        catch (FormatException ex)
+        {
+            Console.WriteLine($"FormatException - {ex}");
+        }
+
+        catch (OverflowException ex)
+        {
+            Console.WriteLine($"OverflowException - {ex}");
+        }
+
+        // decimal parse
+        try
+        {
+            decimal parseDecimal = decimal.Parse(userInput);
+            Console.WriteLine($"Успішно перетворено в decimal {parseDecimal}");
+
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine($"FormatException - {ex}");
+        }
+
+        catch (OverflowException ex)
+        {
+            Console.WriteLine($"OverflowException - {ex}");
+        }
+
+        // int parse
+        try
+        {
+            int parseInt = int.Parse(userInput);
+            Console.WriteLine($"Успішно перетворено в int {parseInt}");
+
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine($"FormatException - {ex}");
+        }
+
+        catch (OverflowException ex)
+        {
+            Console.WriteLine($"OverflowException - {ex}");
+        }
+
+        // byte parse
+        try
+        {
+            byte parseByte = byte.Parse(userInput);
+            Console.WriteLine($"Успішно перетворено в byte {parseByte}");
+
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine($"FormatException - {ex}");
+        }
+
+        catch (OverflowException ex)
+        {
+            Console.WriteLine($"OverflowException - {ex}");
+        }
+
+        //short parse 
+        try
+        {
+            short parseShort = short.Parse(userInput);
+            Console.WriteLine($"Успішно перетворено в short {parseShort}");
+
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine($"FormatException - {ex}");
+        }
+
+        catch (OverflowException ex)
+        {
+            Console.WriteLine($"OverflowException - {ex}");
+        }
+
+        //long parse
+        try
+        {
+            long parseLong = long.Parse(userInput);
+            Console.WriteLine($"Успішно перетворено в long {parseLong}");
+
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine($"FormatException - {ex}");
+        }
+
+        catch (OverflowException ex)
+        {
+            Console.WriteLine($"OverflowException - {ex}");
+        }
+
+        try
+        {
+            char parseChar = char.Parse(userInput);
+
+            if(userInput.Length == 1)
+            {
+                Console.WriteLine($"Успішно перетворено в char {parseChar}");
+            }
+            else
+            {
+                Console.WriteLine("Не вдалося перетворити в char. Рядок має містити лише один символ");
+            }
+
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine($"FormatException - {ex}");
+        }
+
+        catch (OverflowException ex)
+        {
+            Console.WriteLine($"OverflowException - {ex}");
+        }
+
 
 
     }
